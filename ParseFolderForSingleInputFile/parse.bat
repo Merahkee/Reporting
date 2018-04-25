@@ -1,6 +1,6 @@
 @echo off
 
-cd C:\Distributed-setup\OldCodeForParsing
+cd C:\Distributed-setup\ParseFolderForSingleInputFile
 
 :: this is to read ip address from report folder to ipaddress.txt
 dir C:\Distributed-setup\Reports /b /a-d > ipaddress.txt
