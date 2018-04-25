@@ -1,6 +1,6 @@
 @echo off
 
-cd C:\Distributed-setup\ParsingForMultipleInputFilesForWindows
+cd C:\Distributed-setup\ParsingForMultipleInputFile
 
 ::calling ParseAndGenerateCSVFiles.py for executing parsing script with generating graphs
 python ParseAndGenerateCSVFiles.py
