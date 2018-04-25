@@ -9,3 +9,7 @@ python SendEmail.py
 
 del "*.xlsx"
 del "*.pyc"
+
+cd ReportCSVFiles
+del "*.zip"
+cd..
