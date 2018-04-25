@@ -39,8 +39,8 @@ Password:
 #To email addresses(Note: give comma after each email address)
 ToEmail:
   - prajna.merahkee@gmail.com
-  #- yajana.merahkee@gmail.com
-  #- deepak.merahkee@gmail.com
+  - yajana.merahkee@gmail.com
+  - deepak.merahkee@gmail.com
 
 #Give Email subject and emailbody
 EmailSubject:
