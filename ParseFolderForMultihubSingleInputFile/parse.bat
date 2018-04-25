@@ -1,6 +1,6 @@
 @echo off
 
-cd C:\Distributed-setup\ParseFolderForMultiHubSetup
+cd C:\Distributed-setup\ParseFolderForMultihubSingleInputFile
 
 ::calling ParseAndGenerateCSVFiles.py for executing parsing script with generating graphs
 python ParseAndGenerateCSVFiles.py
