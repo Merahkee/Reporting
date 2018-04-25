@@ -24,5 +24,9 @@ Keep the ParseFolder in the directory where the Report folder is located
 //Open the UserInputFile.txt and edit the required field as per the instruction given to the file
 UserInputFile.txt
 
+//avigate to the ParseFolder in your PC Open parse.bat file
+Replace path where the timestamp files are located after dir, it should be like shown below.
+dir your_folderpath /b /a-d > ipaddress.txt
+
 //excecute the parse.bat file from the ParseFolder directory
 parse.bat

@@ -1,29 +1,35 @@
 import os
 import pandas as pd
 import numpy as np
+import sys
 import Allmethods
 import Allvariables
 
 #this is main method it takes name of the log file and save the required log data to the excel sheet
-def parsingResponseTime(TimestampFileName,cache,iterations,users):	
+def parsingResponseTime(TimestampFileName,cache,ApplicationName):	
 	#Data frame declaration
 	df=pd.DataFrame()
-	
-	#declaring empty arrays
-	ColumnName,UserArray = [], []
-	
-	#checking if TimeStamp file is present or not
+	ColumnName,UserArray,csvHeadings = [], [], []
+		
 	if os.path.isfile(TimestampFileName):
 		ParseFileName = 'ParseLogs'+Allvariables.ExcelFileExtention+''
 			
-		#storing all the action names in the script
-		ColumnNamedump = Allmethods.readJmeterOutputFile(TimestampFileName)
-
-		#storing the users in an array
-		for user in range(users):
-			UserArray.append("user"+str(user+1))
+		#counting no. of iteration in script
+		itrarray,users,ColumnNamedump = Allmethods.readJmeterOutputFile(TimestampFileName)
+		itrarray.sort()
+		users.sort()
+		csvHeadings.append(len(itrarray))
+		csvHeadings.append(len(users))
+		csvHeadings.append(len(ColumnNamedump)-3)
 			
-		#storing the action names in an order
+		for user in range(len(users)):
+			UserArray.append("user"+str(users[user]))
+		if ApplicationName != Allvariables.applicationName:
+			UserArray.append(np.nan)
+			UserArray.append("Average")
+			UserArray.append("Minimum")
+			UserArray.append("Maximum")
+			
 		for item in range(len(ColumnNamedump)):
 			colname = ColumnNamedump[item]
 			if colname !='startTime' and colname !='EndTime' and colname !='TotalTime':
@@ -32,32 +38,27 @@ def parsingResponseTime(TimestampFileName,cache,iterations,users):
 		ColumnName.append('EndTime')
 		ColumnName.append('TotalTime')
 			
-		#Declaring a excel writer
+		#converting dataframe to excelsheet
 		writer=pd.ExcelWriter(ParseFileName, engine='xlsxwriter')
-		
-		#iterating the loop and storing the TimeStamp values
-		for itr in range(iterations):
-			#skipping an iteration if cache is True
+			
+		for itr in range(len(itrarray)):
 			if cache is True and itr == 0:
 				continue
 			df["users"] = UserArray
 			for action in range(len(ColumnName)):
 				Array = []
-				for user in range(users): 
-					#storing the TimeStamp values into an array		
-					Array.append(Allmethods.CopyLogs(TimestampFileName,itr+1,user+1,ColumnName[action]))
-				#storing the array values to data-frame
-				df[ColumnName[action]] = Array
-			#converting data-frame into excel file
+				for user in range(len(users)): 
+					#calling Copylogs function to copy the required logs and actions in script into another file		
+					Array.append(Allmethods.CopyLogs(TimestampFileName,itrarray[itr],users[user],ColumnName[action]))
+				if ApplicationName == Allvariables.applicationName:
+					df[ColumnName[action]] = Array
+				else:
+					Array1 = Allmethods.AverageStatistics(Array,len(users),ColumnName[action])
+					df[ColumnName[action]] = Array1
 			df.to_excel(writer,sheet_name="ResponseTimeOfItr="+str(itr+1),index=False)
-		
-		#saving the excel file
 		writer.save()
 		print "File parsed successfully"
-		
-		#returning the action names and a string
-		return "file present",ColumnName
-	
+		return csvHeadings,ColumnName
 	else:
 		exception = "File "+TimestampFileName+" does not exist"
 		return exception,ColumnName

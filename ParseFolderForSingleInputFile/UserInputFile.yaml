@@ -1,24 +1,28 @@
 #-----------------------------Mandatory Inputs--------------------------
 #Give the jmeter output file path
 JmeterOutputFilePath:
-  - C:/Distributed-setup/Reports
+  - C:\Distributed-setup\Reports
   
 JmeterInputFilePath:
-  - C:/Distributed-setup/scale_up_infra/Input
+  - C:\Distributed-setup\scale_up_infra\Input
   
 AwsconfigFilePath:
-  - C:/Distributed-setup/scale_up_infra/Input/aws-config
+  - C:\Distributed-setup\scale_up_infra\Input\aws-config
 
 #---------------------------------Optional------------------------------
 #Give name for graph reports zip file name(Note: without extention)
 ReportZipFileName:
   - Reports
 LogZipFileName:
-  - Logs
+  - logs
 
 #---------------------Inputs For Output CSV Report----------------------
+Run Hash:
+  - sahoiahsoifhoih
 TargetApp:
   - Mammoth
+#Tested On:
+#  - Today
 Instance-Id:
   - aaa-bbb
 BuildNumber:
@@ -39,8 +43,8 @@ Password:
 #To email addresses(Note: give comma after each email address)
 ToEmail:
   - prajna.merahkee@gmail.com
-  #- yajana.merahkee@gmail.com
-  #- deepak.merahkee@gmail.com
+  - yajana.merahkee@gmail.com
+  - deepak.merahkee@gmail.com
 
 #Give Email subject and emailbody
 EmailSubject:
