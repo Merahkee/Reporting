@@ -1,0 +1,50 @@
+#-----------------------------Mandatory Inputs--------------------------
+#Give the jmeter output file path
+JmeterOutputFilePath:
+  - C:\Distributed-setup\Reports
+  
+JmeterInputFilePath:
+  - C:\Distributed-setup\Input
+  
+AwsconfigFilePath:
+  - C:\Distributed-setup\Input\aws-config
+
+#---------------------------------Optional------------------------------
+#Give name for graph reports zip file name(Note: without extention)
+ReportZipFileName:
+  - Reports
+LogZipFileName:
+  - Logs
+
+#---------------------Inputs For Output CSV Report----------------------
+TargetApp:
+  - Mammoth
+Instance-Id:
+  - aaa-bbb
+BuildNumber:
+  - version-1
+ReleaseNumber:
+  - 1
+TestCaseID:
+  - 1
+PageNumber:
+  - Na
+#---------------------------Email Inputs--------------------------------
+#Provide proper From email and email password
+FromEmail:
+  - jira.merahkee@gmail.com
+Password:
+  - jira@123
+
+#To email addresses(Note: give comma after each email address)
+ToEmail:
+  - prajna.merahkee@gmail.com
+  #- yajana.merahkee@gmail.com
+  #- deepak.merahkee@gmail.com
+
+#Give Email subject and emailbody
+EmailSubject:
+  - Logs and reports
+EmailBody:
+  - Hi, this is to check the functionality of the email script. Thank you.
+#-----------------------------------------------------------------------
