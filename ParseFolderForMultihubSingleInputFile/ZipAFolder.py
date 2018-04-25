@@ -1,4 +1,5 @@
 import os
+import sys
 import zipfile
 import Allvariables
 import Allmethods
@@ -30,45 +31,48 @@ if __name__ == '__main__':
 	os.chdir(parentpath)
 	os.chdir(ReportZipInitialFile)
 	
-	for region in range(len(dirs)):
-		LogZipFileName = ''
-		
-		Foldername = dirs[region]
-		
-		LogZipFileName = LogZipFileInitialName+'Of'+Foldername+'.zip'
-		
-		path = os.path.dirname(os.path.realpath(__file__))
-		path = path+'/'+Foldername
-		
-		if os.listdir(path) > 0:
-			zipf = zipfile.ZipFile(LogZipFileName, 'w', zipfile.ZIP_DEFLATED)
-			zipdir(Foldername, zipf)
-			zipf.close()
-			print "TimeStamp folder for "+dirs[region]+" is zipped.."
-		else:
-			print "Report folder is empty.."
-	
-	path = currentpath+'/'+ReportZipFolder
-	os.chdir(path)
-	print "\n"
-	
-	for region in range(len(dirs)):
-		ReportZipFileName = ''
-		
-		Foldername = dirs[region]
-		
-		ReportZipFileName = ReportZipInitialFile+'Of'+Foldername+'.zip'
-		
-		path = os.path.dirname(os.path.realpath(__file__))
-		path = path+'/'+Foldername
-		
-		if os.listdir(path) > 0:
-			zipf = zipfile.ZipFile(ReportZipFileName, 'w', zipfile.ZIP_DEFLATED)
-			zipdir(Foldername, zipf)
-			zipf.close()
-			print "Report for "+dirs[region]+" is zipped.."
-		else:
-			print "Report folder is empty.."
-	os.chdir(currentpath)
-	print "\n"
-	
+	try:
+		for region in range(len(dirs)):
+			LogZipFileName = ''
+
+			Foldername = dirs[region]
+
+			LogZipFileName = LogZipFileInitialName+'Of'+Foldername+'.zip'
+
+			path = os.path.dirname(os.path.realpath(__file__))
+			path = path+'/'+Foldername
+
+			if os.listdir(path) > 0:
+				zipf = zipfile.ZipFile(LogZipFileName, 'w', zipfile.ZIP_DEFLATED)
+				zipdir(Foldername, zipf)
+				zipf.close()
+				print "TimeStamp folder for "+dirs[region]+" is zipped.."
+			else:
+				print "Report folder is empty.."
+
+		path = currentpath+'/'+ReportZipFolder
+		os.chdir(path)
+		print "\n"
+
+		for region in range(len(dirs)):
+			ReportZipFileName = ''
+
+			Foldername = dirs[region]
+
+			ReportZipFileName = ReportZipInitialFile+'Of'+Foldername+'.zip'
+
+			path = os.path.dirname(os.path.realpath(__file__))
+			path = path+'/'+Foldername
+
+			if os.listdir(path) > 0:
+				zipf = zipfile.ZipFile(ReportZipFileName, 'w', zipfile.ZIP_DEFLATED)
+				zipdir(Foldername, zipf)
+				zipf.close()
+				print "Report for "+dirs[region]+" is zipped.."
+			else:
+				print "Report folder is empty.."
+		os.chdir(currentpath)
+		print "\n"
+	except Exception as e:
+		print "Exception is: "+str(e)
+		sys.exit(0)
