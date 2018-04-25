@@ -113,14 +113,14 @@ for region in range(len(dirs)):
 		print "Exception is: "+str(e)
 		sys.exit(0)
 
-'''#storing the path of the directory
+#storing the path of the directory
 dir_name = parentpath+'/'+ReportZipFileName+'/'
 test = os.listdir(dir_name)
 
 #deleting all .zip files from the directory
 for item in test:
     if item.endswith(".zip"):
-        os.remove(os.path.join(dir_name, item))'''
+        os.remove(os.path.join(dir_name, item))
 
 #os.chdir(parentpath)
 
