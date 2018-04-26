@@ -8,4 +8,4 @@ AWSDetailsFileName: aws-config
 CSVFileFolderName: ReportCSVFiles
 
 //Give Folder name for where all excel file should be stored
-CombinedExcelFolderName: ReportCSVFiles
+CombinedExcelFolderName: ReportExcelFiles

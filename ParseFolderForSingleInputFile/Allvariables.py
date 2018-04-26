@@ -22,6 +22,7 @@ executionInputFileExtention = ".yaml"
 
 #Jmeter server log file constant term
 JmeterServerLogFileName = "jmeter-server_"
+TimeStampFileInitialName = "Timestamp_"
 
 #assigning name for the combined excel file
 CombinedExcelFileName = "Combined"
@@ -36,12 +37,9 @@ scriptInputFileHeadings = ['JmeterInputFileName','AWSDetailsFileName','CSVFileFo
 #array contains headings in the user input file
 userInputFileHeadings = ['JmeterOutputFilePath','ReportZipFileName','LogZipFileName']
 
-#this array contains the heading of the csv file
-CSVHeadings=['TargetApp','URL','Tested On','Instance-Id','BuildNumber','ReleaseNumber','TestCaseID','BrowserName','Cache','PageNumber','RampUP','Duration','Instance-IP','ScriptName','Number of Iteration','Number of Users','Number of Action']
-
 #CSV headings for Mammoth application performance testing
-sheet1headings = ['Run Hash','TargetApp','URL','Tested On','Instance-Id','BuildNumber','ReleaseNumber','TestCaseID','BrowserName','Cache','PageNumber','RampUP','Duration','Instance-IP','ScriptName','Number of Iteration','Number of Users','Number of Action']
-sheet2headings = ['Run Hash','Instance ID','Iteration Number']
+sheet1headings = ['Run Hash','TargetApp','URL','Tested On','Instance-Id','BuildNumber','ReleaseNumber','TestCaseID','BrowserName','PageNumber','RampUP','Duration','Number of Iteration','Number of Users']
+sheet2headings = ['Run Hash','Instance ID','ScriptName','Cache','Iteration Number','Users','SL.No.','Actions','Timestamps','StartTime','EndTime']
 
 #application name
 applicationName = "Mammoth"
@@ -49,13 +47,6 @@ applicationName = "Mammoth"
 #assigning sign of completion of each instance data in combined CSV/excel file
 endSymbol = "_"
 
-#Path and name for creating screen shot folder
-ScreenshotFolderName = currentpath+'/Screenshots/Screenshot'
-ScreenshotFolderName2 = currentpath+'/Screenshots'
-
 #Path and Name to a folder for Renaming an existed folder
-ChangeGraphFoldername = currentpath+'/Graphs-'+str(currenttime)+"-Backup"
 ChangeCSVFolderName = currentpath+'/CSV-Time-'+str(currenttime)+"-Backup"
-ChangedScreenshotFolderName = currentpath+"/Screenshot-"+str(currenttime)+"-Backup"
-ChangeExcelFolderName = currentpath+'/Excel-Time-'+str(currenttime)+'-Backup'
 ChangedTimestampFolderName = parentpath+'/Report-'+str(currenttime)+'-Backup'
