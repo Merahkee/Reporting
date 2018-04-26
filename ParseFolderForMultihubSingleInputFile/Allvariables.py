@@ -38,7 +38,7 @@ scriptInputFileHeadings = ['JmeterInputFileName','AWSDetailsFileName','CSVFileFo
 userInputFileHeadings = ['JmeterOutputFilePath','ReportZipFileName','LogZipFileName']
 
 #CSV headings for Mammoth application performance testing
-sheet1headings = ['Run Hash','TargetApp','URL','Tested On','Instance-Id','BuildNumber','ReleaseNumber','TestCaseID','BrowserName','PageNumber','RampUP','Duration','Number of Iteration','Number of Users']
+sheet1headings = ['Run Hash','TargetApp','URL','Tested On','Instance-Id','Region','BuildNumber','ReleaseNumber','TestCaseID','BrowserName','PageNumber','RampUP','Duration','Number of Iteration','Number of Users']
 sheet2headings = ['Run Hash','Instance ID','ScriptName','Cache','Iteration Number','Users','SL.No.','Actions','Timestamps','StartTime','EndTime']
 
 #application name

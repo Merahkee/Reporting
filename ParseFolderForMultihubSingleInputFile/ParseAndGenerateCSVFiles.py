@@ -93,6 +93,7 @@ for region in range(len(dirs)):
 	csvHeadings.append(execution[2])
 	csvHeadings.append(execution[0])
 	csvHeadings.append(execution[1])
+	csvHeadings.append(dirs[region])
 
 	try:
 		#calling all files which are required for parsing and creating CSV

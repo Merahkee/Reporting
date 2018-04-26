@@ -51,6 +51,9 @@ def StoringTheDetailsOfTestExecution(JmeterInputFile,csvHeadings,RunHash):
 	temp = Allmethods.readYaml(Allvariables.inputfilename,"Instance-Id")
 	details.append(temp[0])
 	
+	#appending the region
+	details.append(csvHeadings[4])
+	
 	temp = Allmethods.readYaml(Allvariables.inputfilename,"BuildNumber")
 	details.append(temp[0])
 	
