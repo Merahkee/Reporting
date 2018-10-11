@@ -1,6 +1,6 @@
-Note: This SetUp is for Windows10
+### Note: This SetUp is for Windows10
 
--- INITIAL SETUP FOR PYTHON --
+## -- INITIAL SETUP FOR PYTHON --
 
 1. Download and install Python 2.7.14
 
@@ -17,7 +17,7 @@ Note: This SetUp is for Windows10
 9. python -m pip install pyyaml
 -------------------------------
 
--- SETUP FOR RUNNING SCRIPT --
+## -- SETUP FOR RUNNING SCRIPT --
 
 Keep the ParseFolder in the directory where the Report folder is located
 
